@@ -6,6 +6,8 @@ LowwerAlphabet = "abcdefghijklmnopqrstuvwxyz"
 UpperAlphabet = LowwerAlphabet.upper()
 SpecialCharacter = "@!$"
 
+#never give up
+
 
 user = {
     "userName" : "",
