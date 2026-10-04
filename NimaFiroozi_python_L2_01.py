@@ -1,13 +1,11 @@
 import getpass
 
 FinalScore = 0
-commonPasswords = ["123456", "12345678", "12345", "111111", "123456789", "qwerty", "asdfgh", "zxcvbnm", "password", "admin", "P@s$w0rd"]
+commonPasswords = ["123456", "12345678", "12345", "111111", "123456789", "qwerty", "asdfgh", "zxcvbnm", "password", "admin", "P@s$w0rd","P@ssw0rd"]
 LowwerAlphabet = "abcdefghijklmnopqrstuvwxyz"
 UpperAlphabet = LowwerAlphabet.upper()
-SpecialCharacter = "@!$"
+SpecialCharacter = "@!$#"
 
-#never give up
-#never github
 
 user = {
     "userName" : "",
@@ -38,20 +36,19 @@ while not user["birthday"]:
 print("\nFilter checks:\n")
 
 
-if len(user["password"]) < 8:
-    print("❌ Password is shorter than 8 characters.")
+if len(user["password"]) <= 8:
+    print("❌ Password must be longer than 8 characters.")
 else:
-    print("✅ Password is 8 characters or longer.")
+    print("✅ Password is longer than 8 characters.")
     FinalScore += 1
-
 
 for i in range(len(LowwerAlphabet)):
 
     find = False
 
     for j in range(len(user["password"])):
-        
-        if user["password"][j] == LowwerAlphabet[i]:
+        pass_char = user["password"][j]
+        if pass_char == LowwerAlphabet[i] or pass_char == UpperAlphabet[i]:
             find = True
             print("✅ Password contains English letters.")
             FinalScore +=1
@@ -163,7 +160,7 @@ if len(user["password"]) == len(user["userName"]) and user["userName"] != user["
         
             if user["userName"][i] == "!" :
                 isSpecial = True
-            elif user["userName"][i] != "!":
+            elif user["userName"][i] != "i":
                 isMatch = False
                 break
 
